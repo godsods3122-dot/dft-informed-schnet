@@ -214,7 +214,7 @@ $$\chi(r)=\frac{1-g(r)}{r},\qquad g(r)=\exp\!\big(-\kappa[s_w(r-r^\ast)-s_w(-r^\
 | GELU, cosine, $F=96$ | 132k | 0.543 ± 0.014 | 1.130 ± 0.059 |
 | GELU, DFT cutoff + 스위치, $F=96$ | 132k | 0.548 ± 0.032 | 1.105 ± 0.074 |
 
-통합 모델은 원래 설정보다 힘과 에너지 모두 20% 정확하고, softplus $F=128$보다 파라미터 42% 적으면서 5% 정확하다. 하지만 같은 폭의 GELU + cosine cutoff와 비교하면 DFT cutoff와 스위치가 정확도에 일관된 개선을 더하지 못한다. 그러나, 수렴은 DFT cutoff를 적용한 모델이 200 epochs가량 빠를 수 있음을 알 수 있었다.
+통합 모델은 원래 설정보다 힘과 에너지 모두 20% 정확하고, softplus $F=128$보다 파라미터 42% 적으면서 5% 정확하다. 하지만 같은 폭의 GELU + cosine cutoff와 비교하면 DFT cutoff와 스위치가 정확도에 일관된 개선을 더하지 못한다. 그러나, 수렴은 DFT cutoff를 적용한 모델이 평균적으로 25%가량 빠를 수 있음을 알 수 있었다. (수렴한 오차보다 낮은 MAE를 달성한 epoch를 기준으로 함)
 
 ![학습 곡선](plots/aspirin_curve.png)
 
