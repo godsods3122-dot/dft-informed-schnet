@@ -2,7 +2,7 @@
 
 **DFT에서 유도한 cutoff, 비단조 activation**
 
-SchNet [1]의 큰 매커니즘을 유지한 채로 어디까지 개선할 수 있을까? activation과 cutoff에 주목하였다.
+SchNet [1]의 큰 매커니즘을 유지한 채로 어디까지 개선할 수 있을까? 이 문제를 해결하기 위하여 activation과 cutoff에 주목하였다.
 
 | 구성 요소 | 원래 SchNet | 이 작업 |
 |---|---|---|
