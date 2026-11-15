@@ -50,7 +50,7 @@ SchNet에 사용된 ShiftedSoftplus는 ReLU와의 차이를 epsilon보다 작도
 
 ## 3. Activation과 Width
 
-아스피린, cosine cutoff, seed 3개. $F=76\approx1.2\times3N$은 경험적 기준으로 넣었다. 원자 특징이 분자 내부 자유도 $3N-6=57$을 표현할 수 있어야 한다면, $F=64$는 Lu et al.의 $n+4$를 겨우 넘는 width이다. 그런데 $n+4$는 **깊은 신경망**에서만 충분한 조건이고, SchNet은 블록이 3개뿐이다. 따라서, ssp를 activation으로 쓴다면 실질적으로 넓고 얕은 신경망으로의 근사가 유리하다. 그러나, GELU를 activation으로 사용한다면 GELU의 비단조성이 해당 정리를 회피하므로 어느 정도의 성능 향상을 기대해볼 수 있다.
+아스피린, cosine cutoff, seed 3개. $F=76\approx1.2\times3N$은 경험적 기준으로 넣었다. 원자 특징이 분자 내부 자유도 $3N-6=57$을 표현할 수 있어야 한다면, $F=64$는 Lu et al.의 $n+4$를 겨우 넘는 width이다. 그런데 width $n+4$는 **depth가 $O(2N)$ 수준의 깊은 신경망**에서만 충분한 조건이고, SchNet은 블록이 3개뿐이다. 따라서, ssp를 activation으로 쓴다면 실질적으로 넓고 얕은 신경망으로의 근사가 유리하다. 그러나, GELU를 activation으로 사용한다면 GELU의 비단조성이 해당 정리를 회피하므로 어느 정도의 성능 향상을 기대해볼 수 있다.
 
 | $F$ | 파라미터 | ssp 힘 | GELU 힘 | ssp 에너지 | GELU 에너지 |
 |---|---|---|---|---|---|
