@@ -48,7 +48,7 @@ SchNet은 조각별 선형이 아닌 softplus를 쓴다. 그러면 ReLU에 대�
 
 ## 3. Activation과 Width
 
-아스피린, cosine cutoff, seed 3개. $F=76\approx1.2\times3N$은 경험적 기준으로 넣었다. 원자 특징이 분자 내부 자유도 $3N-6=57$을 표현할 수 있어야 한다면, $F=64$는 Lu et al.의 $n+4$를 겨우 넘는 폭이다. 그런데 $n+4$는 **깊은 신경망**에서만 충분한 조건이고, SchNet은 블록이 3개뿐이다. 따라서, ssp를 activation으로 쓴다면 실질적으로 넓고 얕은 신경망으로의 근사가 유리하다. 그러나, GELU를 activation으로 사용한다면 GELU의 비단조성이 해당 정리를 회피하므로 어느 정도의 성능 향상을 기대해볼 수 있다.
+아스피린, cosine cutoff, seed 3개. $F=76\approx1.2\times3N$은 경험적 기준으로 넣었다. 원자 특징이 분자 내부 자유도 $3N-6=57$을 표현할 수 있어야 한다면, $F=64$는 Lu et al.의 $n+4$를 겨우 넘는 width이다. 그런데 $n+4$는 **깊은 신경망**에서만 충분한 조건이고, SchNet은 블록이 3개뿐이다. 따라서, ssp를 activation으로 쓴다면 실질적으로 넓고 얕은 신경망으로의 근사가 유리하다. 그러나, GELU를 activation으로 사용한다면 GELU의 비단조성이 해당 정리를 회피하므로 어느 정도의 성능 향상을 기대해볼 수 있다.
 
 | $F$ | 파라미터 | ssp 힘 | GELU 힘 | ssp 에너지 | GELU 에너지 |
 |---|---|---|---|---|---|
@@ -116,7 +116,7 @@ $r^*$를 지나면 두 구름은 떨어져 있지만, 각 원자는 여전히 �
 
 ![전자구름의 찌그러짐](plots/electron_type2.png)
 
-**1단계:** 고립 원자의 밀도는 궤도 점유와 상관없이 핵을 중심으로 대칭이다. 즉 $\mathbf R+\mathbf d$에서의 밀도와 거울상 점 $\mathbf R-\mathbf d$에서의 밀도가 같다. 상대 원자는 밀도를 한쪽으로 끌거나 밀어서 이 대칭을 깬다. 비대칭도
+**1단계:** 고립 원자의 밀도는 궤도 점유와 상관없이 핵을 중심으로 대칭이다. 즉 $\mathbf R+\mathbf d$에서의 밀도와 대칭점 $\mathbf R-\mathbf d$에서의 밀도가 같다. 상대 원자는 밀도를 한쪽으로 끌거나 밀어서 이 대칭을 깬다. 비대칭도
 
 $$A=\frac{\tfrac12\int_\Omega|\rho(\mathbf R+\mathbf d)-\rho(\mathbf R-\mathbf d)|\,d\mathbf d}{\int_\Omega\rho(\mathbf R+\mathbf d)\,d\mathbf d}$$
 
