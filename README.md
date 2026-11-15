@@ -237,7 +237,7 @@ dft/             VASP 입력 생성, cutoff fitting (CHGCAR 읽음)
 results/         CSV 결과, epoch별 기록
 ```
 
-단, dft/와 results/에 해당하는 부분은 공개하지 않았다.
+단, dft/와 results/에 해당하는 부분은 데이터 가공 이후 일부 공개할 예정이다.
 
 스크립트 실행은 다음과 같이 할 수 있다.
 
