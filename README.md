@@ -243,8 +243,7 @@ results/         CSV 결과, epoch별 기록
 
 ```bash
 python test_schnet.py
-python train.py --data data/rmd17_aspirin.npz --width 96 --act gelu \
-                --cutoff_mode universal --elec --elec_mode dft --epochs 2000 --seed 0
+python train.py --data data/rmd17_aspirin.npz --width 96 --act gelu --cutoff_mode universal --elec --elec_mode dft --epochs 2000 --seed 0
 ```
 
 데이터: rMD17 (figshare 12672038).
